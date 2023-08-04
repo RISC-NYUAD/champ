@@ -9,7 +9,7 @@ ROS Packages for CHAMP Quadruped Controller.
     sudo apt install -y python-rosdep
     cd <your_ws>/src
     git clone --recursive git@github.com:RISC-NYUAD/champ.git
-    git checkout quad-fastlio
+    git checkout fastlio
     cd ..
     rosdep install --from-paths src --ignore-src -r -y
     catkin build
