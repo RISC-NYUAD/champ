@@ -17,6 +17,8 @@ ROS Packages for CHAMP Quadruped Controller.
 
     roslaunch spot_config gazebo.launch
 
+Definitely need to hit ***ctrl+shift+R*** once, to reset the robot standing up
+
 Accepts linear xy and angular z velocities at topic /cmd_vel
 Accepts a quaternion and a z position at topic /body_pose
 ***z position should change smoothly to avoid jumps***
