@@ -1,0 +1,298 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+	<include>
+	<uri>model://ground_plane</uri>
+	</include>
+    <!--
+	<include>
+		<uri>model://white_plane</uri>
+	</include>    
+	-->    
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    
+    
+    <light type="directional" name="light_1">
+      <pose>-2 -3.8 1.5 0 0 0</pose>
+      <diffuse>0.7 0.7 0.7 1</diffuse>
+      <specular>.1 .1 .1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.2</linear>
+        <constant>0.8</constant>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+      <cast_shadows>false</cast_shadows>
+      <direction>1 0 0</direction>
+    </light>
+
+    <light type="directional" name="light_3">
+      <pose>-2 -3.8 1.5 0 0 0</pose>
+      <diffuse>0.7 0.7 0.7 1</diffuse>
+      <specular>.1 .1 .1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.2</linear>
+        <constant>0.8</constant>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+      <cast_shadows>false</cast_shadows>
+      <direction>-1 0 0</direction>
+    </light>
+    
+    <light type="directional" name="light_2">
+      <pose>-2 -3.8 1.5 0 0 0</pose>
+      <diffuse>0.7 0.7 0.7 1</diffuse>
+      <specular>.1 .1 .1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.2</linear>
+        <constant>0.8</constant>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+      <cast_shadows>false</cast_shadows>
+      <direction>0 1 0</direction>
+    </light>
+    
+    <light type="directional" name="light_4">
+      <pose>-2 -3.8 1.5 0 0 0</pose>
+      <diffuse>0.7 0.7 0.7 1</diffuse>
+      <specular>.1 .1 .1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.2</linear>
+        <constant>0.8</constant>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+      <cast_shadows>false</cast_shadows>
+      <direction>0 -1 0</direction>
+    </light>
+
+
+    <scene>
+      <shadows>0</shadows>
+    </scene>
+
+    <gui>
+      <camera name="user_camera">
+        <pose>-7.5 0 3.85 0 0.324 0</pose>
+      </camera>
+    </gui>
+    <!-- Only one ROS interface plugin is required per world, as any other plugin can connect a Gazebo
+         topic to a ROS topic (or vise versa). -->
+
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>47.3667</latitude_deg>
+      <longitude_deg>8.5500</longitude_deg>
+      <elevation>500.0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <physics type='ode'>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>100</iters>
+          <sor>1.0</sor>
+        </solver>
+        <constraints>
+          <cfm>0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
+      <max_step_size>0.002</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>500</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <include>
+      <static>1</static>
+      <uri>model://Intech World 1</uri>
+      <pose>0 0 0 3.1416 0 0</pose>
+    </include>
+    <include>
+      <static>1</static>
+      <uri>model://warehouse_racks</uri>
+      <pose>-0.1456 -12.667 -0.015 1.5708 0 0</pose>
+    </include>
+<!--
+    <include>
+      <static>1</static>
+      <uri>model://ladder_60deg_0rails</uri>
+      <pose>6.8536 6.6545 0 0 0 1.5708</pose>
+	  <name>ladder0</name>
+    </include>
+    <include>
+      <static>1</static>
+      <uri>model://ladder_60deg_0rails</uri>
+      <pose>6.8536 7.553 0 0 0 1.5708</pose>
+	  <name>ladder1</name>
+    </include>
+    <include>
+      <static>1</static>
+      <uri>model://ladder_60deg_0rails</uri>
+      <pose>6.8536 5.7614 0 0 0 1.5708</pose>
+	  <name>ladder2</name>
+    </include>
+-->
+<!--
+    <include>
+      <static>1</static>
+      <uri>model://brick_box_3x1x3</uri>
+      <pose>6.326 6.35 0 0 0 1.5708</pose>
+	  <name>brick_2</name>
+    </include>
+-->
+	<include>
+	  <static>1</static>
+	  <uri>model://pillar</uri>
+	  <pose>-2.77 -3.98 0 0 0 0</pose>
+	  <name>pillar_1</name>
+	</include>
+
+	<include>
+	  <static>1</static>
+	  <uri>model://pillar</uri>
+	  <pose>0.47 1.51 0 0 0 0</pose>
+	  <name>pillar_2</name>
+	</include>	
+	
+	<include>
+	  <static>1</static>
+	  <uri>model://wall</uri>
+	  <pose>-1.0 -1.2426 0 0 0 0</pose>
+	  <scale>0.7 0.7 0.7</scale>
+	  <name>wall_slab_1</name>
+	</include>
+	
+	<include>
+	  <static>1</static>
+	  <uri>model://wall</uri>
+	  <pose>2.8479 -1.9778 0 0 0 -1.5708</pose>
+	  <scale>0.7 0.7 0.7</scale>
+	  <name>wall_slab_2</name>
+	</include>
+	
+	<include>
+	  <static>1</static>
+	  <uri>model://wall</uri>
+	  <pose>0.52 0.05 0 0 0 1.56</pose>
+	  <scale>0.7 0.7 0.7</scale>
+	  <name>wall_slab_3</name>
+	</include>
+	
+	
+	<include>
+	  <static>1</static>
+	  <uri>model://wall2</uri>
+	  <pose>5.89 6.60 1.15 0 0 1.56</pose>
+	  <scale>0.7 0.7 0.2</scale>
+	  <name>wall_slab_4</name>
+	</include>
+	
+	<include>
+	  <static>1</static>
+	  <uri>model://wall</uri>
+	  <pose>-1.5 -1.2426 0 0 0 0</pose>
+	  <scale>0.7 0.7 0.7</scale>
+	  <name>wall_slab_5</name>
+	</include>	
+	
+	
+	<include>
+	  <static>1</static>
+	  <uri>model://wall</uri>
+	  <pose>8.00 3.75 -0.80 0 0 0</pose>
+	  <scale>0.7 0.7 0.7</scale>
+	  <name>wall_slab_6</name>
+	</include>		
+
+	<include>
+	  <static>1</static>
+	  <uri>model://wall</uri>
+	  <pose>9.27 -2 -0.94 0 0 1.56</pose>
+	  <scale>0.7 0.7 0.7</scale>
+	  <name>wall_slab_7</name>
+	</include>		
+	
+	<include>
+	  <static>1</static>
+	  <uri>model://wall</uri>
+	  <pose>0.1 -6.33 -0.51 0 0 1.56</pose>
+	  <scale>0.7 0.7 0.7</scale>
+	  <name>wall_slab_8</name>
+	</include>	
+
+	<include>
+	  <static>1</static>
+	  <uri>model://wall</uri>
+	  <pose>0.1 -4.38 -1.62 0 0 1.56</pose>
+	  <scale>0.7 0.7 0.7</scale>
+	  <name>wall_slab_9</name>
+	</include>
+	
+	<include>
+	  <static>1</static>
+	  <uri>model://wall</uri>
+	  <pose>0.1 -6.33 0.08 0 0 1.56</pose>
+	  <scale>0.7 0.7 0.7</scale>
+	  <name>wall_slab_10</name>
+	</include>
+	
+
+	
+	<include>
+	  <static>1</static>
+	  <uri>model://floor</uri>
+	  <pose>3.03 -2.37 -1.25 0 0 1.56</pose>
+	  <scale>0.7 0.7 0.7</scale>
+	  <name>floor</name>
+	</include>
+			
+				
+
+    
+<!--
+    <include>
+      <static>1</static>
+      <uri>model://plant 3</uri>
+      <pose>-1.8582 -2.3803 0 0 0 0</pose>
+	  <name>plant1</name>
+    </include>
+    <include>
+      <static>1</static>
+      <uri>model://plant 3</uri>
+      <pose>9.31045 6.6375 0 0 0 0</pose>
+	  <name>plant2</name>
+    </include>
+-->
+
+
+
+  </world>
+</sdf>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
